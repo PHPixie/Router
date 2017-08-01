@@ -6,7 +6,7 @@ class Matcher
 {
     public function match($pattern, $string)
     {
-        $regex = '#^'.$pattern->regex().'$#i';
+        $regex = '#^'.$pattern->regex().'$#ui';
         if(($matches = $this->matchRegex($regex, $string)) === null) {
             return null;
         }
