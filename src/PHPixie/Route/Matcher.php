@@ -43,6 +43,6 @@ class Matcher
         if(empty($names)) {
             return array();
         }
-        return array_combine($names, $matches);
+        return array_combine($names, array_slice($matches, 0, count($names)));
     }
 }
