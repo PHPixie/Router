@@ -6,7 +6,7 @@ class Matcher
 {
     public function match($pattern, $string)
     {
-        $regex = '#^'.$pattern->regex().'$#i';
+        $regex = '#^'.$pattern->regex().'$#ui';
         if(($matches = $this->matchRegex($regex, $string)) === null) {
             return null;
         }
@@ -43,6 +43,6 @@ class Matcher
         if(empty($names)) {
             return array();
         }
-        return array_combine($names, $matches);
+        return array_combine($names, array_slice($matches, 0, count($names)));
     }
 }
